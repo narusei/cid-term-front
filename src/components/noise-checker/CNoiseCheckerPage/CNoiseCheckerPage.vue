@@ -1,8 +1,10 @@
 <template>
   <section class="app-base">
     <div class="header">
-      <div class="title">Noise_Checker</div>
-      <router-link class="link-container" :to="{ name: 'PastNoisePage' }">過去の騒音記録</router-link>
+      <div class="c-title">Noise_Checker</div>
+      <router-link class="link-container" :to="{ name: 'PastNoisePage' }"
+        >過去の騒音記録</router-link
+      >
     </div>
     <div class="nc-content">
       <div>現在の騒音レベルは{{ noiseLevel + 1 }}です</div>
@@ -58,7 +60,7 @@ export default class CNoiseCheckerPage extends Vue {
   align-items: center;
   justify-content: space-between;
 
-  .title {
+  .c-title {
     color: white;
     margin: 12px 0px 12px 12px;
   }
