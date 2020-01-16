@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import NoiseCheckerPage from "../views/NoiseCheckerPage.vue";
 import PastNoisePage from "../views/PastNoisePage.vue";
 
 Vue.use(VueRouter);
@@ -7,6 +8,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "NoiseCheckerPage",
+    component: NoiseCheckerPage
+  },
+  {
+    path: "/past-noise",
     name: "PastNoisePage",
     component: PastNoisePage
   }
