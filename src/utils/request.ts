@@ -34,7 +34,7 @@ export default {
       headers: headers
     });
     promise.catch(function() {
-      return console.log(promise);
+      // return console.log(promise);
     });
     return promise;
   },
