@@ -6,29 +6,7 @@
         >現在の騒音</router-link
       >
     </div>
-    <div class="c-search-container">
-      <div class="date-time">
-        <div>開始時刻：</div>
-        <b-datetimepicker
-          placeholder="検索開始時刻を入力"
-          icon="calendar-today"
-          editable
-          v-model="startdate"
-        >
-        </b-datetimepicker>
-      </div>
-      <div class="date-time">
-        <div>終了時刻：</div>
-        <b-datetimepicker
-          placeholder="検索終了時刻を入力"
-          icon="calendar-today"
-          editable
-          v-model="enddate"
-        >
-        </b-datetimepicker>
-      </div>
-      <b-button class="search-button" @click="onSearch()">検索</b-button>
-    </div>
+    <div class="main-title">過去10件の騒音グラフ</div>
     <div class="pn-content">
       <template v-if="loading">
         <b-loading
@@ -38,9 +16,7 @@
         ></b-loading>
       </template>
       <template v-else>
-        <template v-if="!chartData.datasets">
-          データがありません
-        </template>
+        <template v-if="!chartData.datasets">データがありません</template>
         <template v-else>
           <line-chart :chartData="chartData" :options="options"></line-chart>
         </template>
@@ -72,11 +48,6 @@ export default class CPastNoisePage extends Vue {
   // 3.getter
   // 4.@Watch
   // 5.method
-
-  @Emit("search")
-  onSearch() {
-    return "";
-  }
 }
 </script>
 <style lang="scss" scoped>
@@ -111,20 +82,11 @@ export default class CPastNoisePage extends Vue {
   }
 }
 
-.c-search-container {
+.main-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px;
-  margin: 24px auto;
-  padding: 12px;
-
-  .date-time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 12px;
-  }
+  height: 10%;
 }
 
 .pn-content {
@@ -133,5 +95,6 @@ export default class CPastNoisePage extends Vue {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  margin-right: 50px;
 }
 </style>
