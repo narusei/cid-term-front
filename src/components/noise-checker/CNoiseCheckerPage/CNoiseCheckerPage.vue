@@ -2,9 +2,7 @@
   <section class="app-base">
     <div class="header">
       <div class="c-title">Noise_Checker</div>
-      <router-link class="link-container" :to="{ name: 'PastNoisePage' }"
-        >過去の騒音記録</router-link
-      >
+      <router-link class="link-container" :to="{ name: 'PastNoisePage' }">過去の騒音記録</router-link>
     </div>
     <div class="nc-content">
       <div>現在の騒音レベルは{{ noiseLevel + 1 }}です</div>
@@ -29,14 +27,29 @@ export default class CNoiseCheckerPage extends Vue {
   get noiseImage() {
     switch (this.noiseLevel) {
       case 0:
-        this.noiseLeveldetail = "静かな住宅街のラジオ程度の騒音";
-        return require("@/assets/radio.png");
+        this.noiseLeveldetail = "図書館";
+        return require("@/assets/toshokan.png");
       case 1:
-        this.noiseLeveldetail = "デパート内程度の騒音";
-        return require("@/assets/shopping_mall_ekinaka.png");
+        this.noiseLeveldetail = "静かなオフィス";
+        return require("@/assets/coworking_space.png");
       case 2:
-        this.noiseLeveldetail = "地下鉄内程度の騒音";
+        this.noiseLeveldetail = "日常会話";
+        return require("@/assets/kaiwa.png");
+      case 3:
+        this.noiseLeveldetail = "掃除機";
+        return require("@/assets/soujiki.png");
+      case 4:
+        this.noiseLeveldetail = "地下鉄";
         return require("@/assets/train_chikatetsu.png");
+      case 5:
+        this.noiseLeveldetail = "大声";
+        return require("@/assets/oogoe.png");
+      case 6:
+        this.noiseLeveldetail = "細山のいびき";
+        return require("@/assets/panda_1.jpg");
+      case 7:
+        this.noiseLeveldetail = "聴覚に障害を及ぼすレベルの細山";
+        return require("@/assets/panda_2.jpg");
 
       default:
         return "No Data";
